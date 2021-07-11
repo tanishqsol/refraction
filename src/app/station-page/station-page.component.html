@@ -1,0 +1,76 @@
+<mat-toolbar class="toolbar">
+    <button class="toolbar-buttons"
+            mat-raised-button
+            color="primary"
+            (click)="goBack()">Back</button>
+    <button class="toolbar-buttons"
+            mat-raised-button
+            color="primary">Logout</button>
+</mat-toolbar>
+
+<div class="main-container">
+    <div class="heading">
+        <span>Select the OSCE station to practice</span>
+    </div>
+    <div class="section-container">
+        <div class="section-box-1"
+             [ngClass]="{'section-box-1-color' : this.station1color}"
+             (click)="station1Click()">
+            <h3>Station 1</h3>
+            <br>
+            <p>Retinoscopy 1</p>
+            <p>Retinoscopy 2</p>
+        </div>
+        <div class="section-box-2"
+             [ngClass]="{'section-box-2-color' : this.station2color}"
+             (click)="station2Click()">
+            <h3>Station 2</h3>
+            <br>
+            <p>Retinoscopy 3</p>
+            <p>Retinoscopy 4</p>
+        </div>
+        <div class="section-box-3"
+             [ngClass]="{'section-box-3-color' : this.station3color}"
+             (click)="station3Click()">
+            <h3>Station 3</h3>
+            <br>
+            <p>Retinoscopy 5</p>
+            <p>Retinoscopy 6</p>
+        </div>
+        <div class="section-box-4"
+             [ngClass]="{'section-box-4-color' : this.station4color}"
+             (click)="station4Click()">
+            <h3>Station 4</h3>
+            <br>
+            <p>Retinoscopy 7</p>
+            <p>Retinoscopy 8</p>
+        </div>
+        <div class="section-box-5"
+             [ngClass]="{'section-box-5-color' : this.station5color}"
+             (click)="station5Click()">
+            <h3>Station 5</h3>
+            <br>
+            <p>Retinoscopy 9</p>
+            <p>Retinoscopy 10</p>
+        </div>
+    </div>
+
+    <div class="click-details">
+        <p>
+            Click the 'Start OSCE' button to enter your TEN minute station<br><br>
+            The on-screen timer counts up in 15 second intervals
+            <br><br>
+            In the actual THREE audible warnings beeps will be given after 5 mins and again<br> after 9-minutes -
+            unfortunately the sound is not supported through this browser
+        </p>
+    </div>
+    <div class="save-data">
+        <h3 class="save-data-text"> This System saves Data automatically</h3>
+    </div>
+
+    <div class="start-button"
+         [ngClass]="{'start-button-clicked' : isStartClicked}"
+         (click)="startOsce()">
+        <h1>Start OSCE</h1>
+    </div>
+</div>

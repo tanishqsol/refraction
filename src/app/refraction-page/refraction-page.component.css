@@ -1,0 +1,48 @@
+.refraction-topbar{
+    padding:1vh;
+    margin-top:0.3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    background-color:rgb(19, 19, 82)
+}
+.main-container{
+    display: flex;
+    align-items:center;
+    height: 100%;
+    width: 100%;
+    justify-content:center;
+    flex-direction: row;
+
+
+}
+.refraction-text{
+    width: 50%;
+    height: 50%;
+    flex-wrap: wrap;
+    
+}
+.start-practice{
+    display: flex;
+    background-color: rgba(0, 128, 128, 0.267);
+    margin-left: 5vw;
+    justify-content: center;
+    border: 1px solid blue;
+    color: rgb(14, 14, 148);
+    width: 14vw;
+    height:12vh;
+    align-items: center;
+    cursor: pointer;
+}
+.start-practice:hover{
+    background-color: darkorange;
+}
+.mat-toolbar{
+    background-color: #4777B2;
+
+}
+.toolbar-buttons{
+    margin : 0 2vw;
+}

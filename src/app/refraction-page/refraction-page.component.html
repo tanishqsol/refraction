@@ -1,0 +1,44 @@
+<mat-toolbar>
+    
+    <button class="toolbar-buttons"
+            mat-raised-button
+            color="primary"
+            (click)="goBack()"
+            *ngIf="showLogout">Logout</button>
+</mat-toolbar>
+
+<div class="refraction-topbar">
+    <span class="refraction-heading">
+        <h3>Refraction Certificate Examination</h3>
+    </span>
+</div>
+
+<div class="main-container">
+    <div class="refraction-text">
+        <p>
+            Stephenson Way, London NW1 2HD • Registered Charity Number 299872 in England and Wales SCO45652 in
+            Scotland
+            The Refraction Certificate Examination is made up of five ten 10 minute OSCE stations. In each station
+            candidates input their calculated answers using an application on an iPad.<br><br>
+
+            In order to make the examination as straight forward as possible we have produced a practice application so
+            that you can familiarise yourself with it.<br><br>
+
+            Please note the running timer for each station which automatically shuts off after ten minutes. Any
+            information you have entered is automatically saved.<br><br>
+
+            If you are using an iPad for this practice test remember to turn it into portrait mode before the test
+            starts.
+
+
+        </p>
+    </div>
+
+    <div class="start-practice"
+         [routerLink]="['/refraction/stationPage']"
+         routerLinkActive="router-link-active">
+        <div class="practice-button">
+            <h3>Start Practice</h3>
+        </div>
+    </div>
+</div>

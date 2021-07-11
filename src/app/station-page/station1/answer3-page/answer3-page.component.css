@@ -1,0 +1,39 @@
+mat-toolbar{
+    background-color: #4777B2;
+}
+.toolbar-buttons{
+    margin : 0 2vw;
+}
+.question3Box{
+    width: 50%;
+    border:1px solid gray;
+    padding :1vh;
+}
+.question3MainBox{
+    width: 50%;
+    border:1px solid gray;
+    padding : 1vh;
+}
+.question3Words{
+    width: 50%;
+}
+.question3MainBox{
+    width: 50%;
+    border:1px solid gray;
+    padding: 1vh;
+}
+.answerFromQuestion1,.answerFromQuestion2{
+width:50%;
+}
+.answerFromQuestion1Box,.answerFromQuestion2Box{
+border:1px solid gray;
+width: 100%;
+padding:1vh;
+}
+.answerFromQuestion2{
+width:50%;
+
+}
+.answer1,.answer2{
+    padding:5vh;
+}

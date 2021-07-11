@@ -1,0 +1,66 @@
+`
+<div class="main-container"
+     fxLayoutAlign="center center"
+     fxLayout="column">
+    <div class="question1Div"
+         fxLayout="row"
+         fxLayoutAlign="space-between">
+        <span>Question 1</span>
+        <span *ngIf="isActive">Right Eye</span>
+    </div>
+    <p class="question1Words">
+        Please record the gross retinoscopy (i.e without removing the working distance) in the box <br><br>
+        You may provide your answer in positive or negitice cylender format as a power cross.
+        <br><br>
+        DO NOT ENTER YOUR FINAL PRESCRIPTION HERE
+    </p>
+    <div class="question1Main"
+         fxLayoutGap="2vh"
+         fxLayout="column">
+        <div class="question1MainBox"
+             fxLayout="row"
+             fxLayoutAlign="space-between center">
+            <span>Rotate Power Cross then complete power fields</span>
+            <span clas="active-cls"
+                  *ngIf="isActive">Active
+            </span>
+        </div>
+        <div class="question1RotateBox"
+             fxLayout="column">
+            <div class="rotateButtons"
+                 fxLayoutAlign="space-between">
+                <button mat-raised-button
+                        color="primary">Rotate + 5</button>
+                <button mat-raised-button
+                        color="primary">Rotate - 5</button>
+            </div>
+            <div class="rotateImage">image rotates here</div>
+            <div>
+                <button class="resetButton"
+                        mat-raised-button
+                        color="primary">Reset to 90</button>
+            </div>
+        </div>
+    </div>
+    <div class="question1Alternative"
+         fxLayout="column"
+         fxLayoutAlign="space-between center">
+        <div class="alternate1Box"
+             fxLayout="row"
+             fxLayoutAlign="space-between center">
+            <span>Alternatively enter your answer using Spherocylinder format</span>
+
+        </div>
+        <div class="alterntiveInputs"
+             fxLayoutGap="20px">
+
+            <input placeholder="Sphere"
+                   class="sphereInput">
+            <input placeholder="Cylender"
+                   class="cylenderInput">
+            <input placeholder="Axis"
+                   class="axisInput">
+        </div>
+
+    </div>
+</div>

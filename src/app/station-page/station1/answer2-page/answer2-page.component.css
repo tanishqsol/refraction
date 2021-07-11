@@ -1,0 +1,24 @@
+mat-toolbar{
+    background-color: #4777B2;
+}
+.toolbar-buttons{
+    margin : 0 2vw;
+}
+.question2Box{
+    margin-top:1vh;
+    border: 1px solid gray;
+    width: 50%;
+    padding:1vh;
+}
+.question2MainBox
+{
+    margin-top: 20vh;
+
+    width: 50%;
+    border:1px solid gray;
+    padding: 1vh;
+}
+.distanceInput,.dioptricInput{
+    height:6vh;
+    width: 22vw;
+}

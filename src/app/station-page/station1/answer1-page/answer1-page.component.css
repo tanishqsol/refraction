@@ -1,0 +1,56 @@
+mat-toolbar{
+    background-color: #4777B2;
+}
+.toolbar-buttons{
+    margin : 0 2vw;
+}
+.question1Div{
+    width: 50%;
+    border: 1px solid gray;
+    margin-top:2vh;
+    padding:1vh;
+}
+.ques1Box{
+    border: 1px solid gray;
+    width: 100%;
+}
+.question1MainBox{
+    /* width: 50%; */
+    border: 1px solid gray;
+    padding:1vh;
+}
+.question1Main{
+    width: 50%;
+
+}
+.question1Words{
+    padding: 4vh;
+}
+.resetButton{
+    width:fit-content;
+    float:right;
+}
+.rotateImage{
+    margin: 30%;
+}
+.question1Alternative{
+    width: 50%;
+    margin-top:3vh;
+}
+.alternate1Box{
+    border: 1px solid gray;
+    padding:1vh;
+    width: 100%;
+
+}
+.cylenderInput,.sphereInput,.axisInput{
+    height: 6vh;
+}
+.alterntiveInputs{
+    margin:10vh;
+}
+.active-cls{
+    border: 1px solid gray;
+    background-color: darkorange;
+    width: 10%;
+}
