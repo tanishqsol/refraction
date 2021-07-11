@@ -1,0 +1,36 @@
+<div class="powerSelection"
+     fxLayout="row"
+     fxLayoutGap="30px">
+    <div fxLayout="column">
+        <div class="plusminus"
+             *ngFor="let sign of plusMinus"
+             fxLayoutAlign="center center">
+            {{sign}}
+        </div>
+    </div>
+    <div fxLayout="column">
+
+        <div class="zeroToTen"
+             *ngFor="let number of zeroToTen"
+             fxLayoutAlign="center center"
+             fxLayout="column">
+            {{number}}
+        </div>
+        <button class="closeButton"
+                mat-raised-button
+                color="warn"
+                [mat-dialog-close]="true">Close</button>
+    </div>
+    <div fxLayout="column">
+
+        <div class="decimalClass"
+             *ngFor="let deci of decimalFloat"
+             fxLayoutAlign="center center"
+             fxLayout="column">
+            {{deci}}
+        </div>
+        <div>
+
+        </div>
+
+    </div>

@@ -1,0 +1,31 @@
+.plusminus{
+height:4vh;
+margin-bottom:2vh;
+width:2vw;
+border:1px solid black;
+}
+.zeroToTen{
+height:4vh;
+margin-bottom:2vh;
+width:2vw;
+border:1px solid black;
+}
+.decimalClass{
+height:4vh;
+margin-bottom:2vh;
+width:2vw;
+border:1px solid black;
+}
+.powerSelection{
+    display: flex;
+    position: relative;
+}
+.plusminusContainer{
+    display: flex;
+    flex-direction: column;
+}
+.closeButton{
+position: absolute;
+bottom: 0;
+right:0;
+}
