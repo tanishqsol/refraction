@@ -31,7 +31,7 @@
             </span>
         </div>
         <div class="question1RotateBox"
-             fxLayout="column">
+             fxLayout="column" fxLayoutGap="6vh">
             <div class="rotateButtons"
                  fxLayoutAlign="space-between">
                 <button mat-raised-button
@@ -39,7 +39,13 @@
                 <button mat-raised-button
                         color="primary">Rotate - 5</button>
             </div>
-            <div class="rotateImage">image rotates here</div>
+            <div class="rotateImageDiv" fxLayoutAlign="center center">
+                <button mat-raised-button
+                        color="primary" class="powerTopButton">Power</button>
+                <img src="../../../../assets/images/cartPlane.png" class="rotateImage">
+                <button mat-raised-button
+                        color="primary" class="powerRightButton">Power</button>
+            </div>
             <div>
                 <button class="resetButton"
                         mat-raised-button
@@ -57,7 +63,7 @@
 
         </div>
         <div class="alterntiveInputs"
-             fxLayoutGap="20px">
+             fxLayoutGap="20px" fxLayoutAlign="center center">
             <input placeholder="Sphere"
                    class="sphereInput"
                    (click)="openDialog()">

@@ -86,7 +86,7 @@ height: 10vh;
     align-items: center;
     border: 1px solid black;
     margin-top:1vh;
-    padding: 0px 1vw;
+    /* padding: 1vh; */
 
 
 }
@@ -98,7 +98,7 @@ height: 10vh;
     position: relative;
 }
 .question1Words, .question2Words, .question3Words{
-    width: 50%;
+    width: 60%;
     display: flex;
     align-items: center;
 }
@@ -111,7 +111,7 @@ height: 10vh;
     height: 15vh;
     right:0;
     float:right;
-    margin: 5vh 6vw;
+    margin: 3vh 0vw;
 
 }
 .marks1text,.marks2text,.marks3text{

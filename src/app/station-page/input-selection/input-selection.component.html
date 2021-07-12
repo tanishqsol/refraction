@@ -16,13 +16,9 @@
              fxLayout="column">
             {{number}}
         </div>
-        <button class="closeButton"
-                mat-raised-button
-                color="warn"
-                [mat-dialog-close]="true">Close</button>
+
     </div>
     <div fxLayout="column">
-
         <div class="decimalClass"
              *ngFor="let deci of decimalFloat"
              fxLayoutAlign="center center"
@@ -30,7 +26,10 @@
             {{deci}}
         </div>
         <div>
-
+            <button class="closeButton"
+                    mat-raised-button
+                    color="warn"
+                    [mat-dialog-close]="true">Close</button>
         </div>
 
     </div>

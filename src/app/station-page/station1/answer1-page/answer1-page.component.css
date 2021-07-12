@@ -14,6 +14,10 @@ mat-toolbar{
     border: 1px solid gray;
     width: 100%;
 }
+.question1RotateBox{
+position:relative;
+margin:3vh;
+}
 .question1MainBox{
     /* width: 50%; */
     border: 1px solid gray;
@@ -31,7 +35,19 @@ mat-toolbar{
     float:right;
 }
 .rotateImage{
-    margin: 30%;
+    /* margin: 30%; */
+    /* margin: auto; */
+    height:40vh;
+}
+.powerTopButton{
+    position: absolute;
+    top: 6vh;
+    left: 50%;
+}
+.powerRightButton{
+    position: absolute;
+    top: 25vh;
+    right:6vw;
 }
 .question1Alternative{
     width: 50%;
@@ -45,9 +61,12 @@ mat-toolbar{
 }
 .cylenderInput,.sphereInput,.axisInput{
     height: 6vh;
+    width: 10vw;
 }
 .alterntiveInputs{
     margin:10vh;
+    flex-wrap: nowrap;
+    width:100%;
 }
 .active-cls{
     border: 1px solid gray;
