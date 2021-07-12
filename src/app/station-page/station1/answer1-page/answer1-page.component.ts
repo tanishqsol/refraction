@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { ElementRef } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InputSelectionComponent } from '../../input-selection/input-selection.component';
 
@@ -10,7 +11,9 @@ import { InputSelectionComponent } from '../../input-selection/input-selection.c
   styleUrls: ['./answer1-page.component.css']
 })
 export class Answer1PageComponent implements OnInit {
-
+  @ViewChild('rotateDiv') el: ElementRef;
+  targetValue: any;
+  // power='power';
   constructor(private location: Location, private route: Router, public dialog: MatDialog) { }
   isActive = true;
   ngOnInit(): void {
@@ -18,16 +21,26 @@ export class Answer1PageComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+  rotatePlus5() {
+    this.el.nativeElement.style.transform += "rotate(-7deg)";
+  }
+  rotateMinus5() {
+    this.el.nativeElement.style.transform += "rotate(+7deg)";
+  }
+  resetRotation() {
+    this.el.nativeElement.style.transform = "rotate(0deg)";
+
+  }
   openDialog(): void {
     const dialogRef = this.dialog.open(InputSelectionComponent, {
-      width: '20vw',
-      height: '85vh'
-      // data: {name: this.name, animal: this.animal}
+      width: '15vw',
+      height: '80vh',
+      data: {targetValue: this.targetValue}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // this.animal = result;
+      this.targetValue = result;
     });
   }
 }

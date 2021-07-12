@@ -23,6 +23,9 @@ margin:3vh;
     border: 1px solid gray;
     padding:1vh;
 }
+.red-class{
+    background: yellow;
+}
 .question1Main{
     width: 50%;
 
@@ -40,14 +43,14 @@ margin:3vh;
     height:40vh;
 }
 .powerTopButton{
-    position: absolute;
-    top: 6vh;
-    left: 50%;
+    position: sticky;
+    margin-bottom: 45vh;
+    left: 49%;
 }
 .powerRightButton{
-    position: absolute;
-    top: 25vh;
-    right:6vw;
+    position: sticky;
+    margin-bottom: 5vh;
+    right: 3vw;
 }
 .question1Alternative{
     width: 50%;

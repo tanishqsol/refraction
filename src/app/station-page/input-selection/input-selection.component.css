@@ -1,26 +1,38 @@
 .plusminus{
 height:4vh;
-margin-bottom:2vh;
+margin-bottom:1vh;
 width:2vw;
 border:1px solid black;
 }
 .zeroToTen{
 height:4vh;
-margin-bottom:2vh;
+margin-bottom:1vh;
 width:2vw;
 border:1px solid black;
 }
 .decimalClass{
 height:4vh;
-margin-bottom:2vh;
+margin-bottom:1vh;
 width:3vw;
 border:1px solid black;
 }
+.selectedValues{
+    width:80%;
+    height:4vh;
+    border:1px solid black;
+    margin: auto;
+}
 .powerSelection{
+    margin-top: 2vh;
     display: flex;
     position: relative;
 }
 .plusminusContainer{
     display: flex;
     flex-direction: column;
+}
+.closeButtonDiv{
+    position: absolute;
+    bottom: -83px;
+    left: 5vw;
 }

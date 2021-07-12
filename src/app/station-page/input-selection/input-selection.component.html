@@ -1,10 +1,14 @@
+<div class="selectedValues">
+    {{targetValue}}
+</div>
 <div class="powerSelection"
      fxLayout="row"
      fxLayoutGap="30px">
     <div fxLayout="column">
         <div class="plusminus"
              *ngFor="let sign of plusMinus"
-             fxLayoutAlign="center center">
+             fxLayoutAlign="center center"
+             (click)="appendPlusMinus(sign)">
             {{sign}}
         </div>
     </div>
@@ -13,7 +17,8 @@
         <div class="zeroToTen"
              *ngFor="let number of zeroToTen"
              fxLayoutAlign="center center"
-             fxLayout="column">
+             fxLayout="column"
+             (click)="appendZeroToTen(number)">
             {{number}}
         </div>
 
@@ -22,14 +27,15 @@
         <div class="decimalClass"
              *ngFor="let deci of decimalFloat"
              fxLayoutAlign="center center"
-             fxLayout="column">
-            {{deci}}
+             fxLayout="column"
+             (click)="appendDecimal(deci)">
+            0{{deci}}
         </div>
-        <div>
+        <div class="closeButtonDiv">
             <button class="closeButton"
                     mat-raised-button
                     color="warn"
-                    [mat-dialog-close]="true">Close</button>
+                    [mat-dialog-close]="targetValue">Close</button>
         </div>
 
     </div>

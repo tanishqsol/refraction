@@ -8,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
 export class InputSelectionComponent implements OnInit {
 
   constructor() { }
+  targetValue: any = "";
   plusMinus = ["+", "-"]
-  zeroToTen = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  decimalFloat = [0.00, 0.25, 0.50, 0.75]
+  zeroToTen = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  decimalFloat = [".00", ".25", ".50", ".75"]
   ngOnInit(): void {
   }
+  appendZeroToTen(val) {
+    this.targetValue += val.toString()
+    console.log(this.targetValue)
 
+  }
+  appendPlusMinus(val) {
+    this.targetValue += val.toString()
+    console.log(this.targetValue)
+
+
+  }
+  appendDecimal(val) {
+    this.targetValue += val.toString()
+    console.log(this.targetValue)
+  }
 }
