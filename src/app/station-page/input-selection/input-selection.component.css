@@ -24,8 +24,3 @@ border:1px solid black;
     display: flex;
     flex-direction: column;
 }
-.closeButton{
-/* position: absolute;
-bottom: 0;
-right:0; */
-}
