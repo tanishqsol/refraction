@@ -1,0 +1,127 @@
+mat-toolbar{
+    background-color: #4777B2;
+}
+.toolbar-buttons{
+    margin : 0 2vw;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    display: flex;
+    margin: 3vh 0;
+    padding:1vh 1vw;
+    border: 1px solid gray;
+    width:50%;
+}
+.mark-sheets{
+    width: 50vw;
+    margin:2vh;
+}
+.right-eye{
+width: 50%;
+height: 10vh;
+border: 1px solid black;
+background-color: rgb(228, 213, 12);
+}
+
+.left-eye{
+width: 50%;
+border: 1px solid black;
+height: 10vh;
+}
+.introduction{
+    border: 1px solid gray;
+    width: 48%;
+    padding: 0 1vw;
+}
+.question1,.question2,.question3{
+    width: 50%;
+}
+
+.answer1Box{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background-color: rgba(31, 59, 100, 0.228);
+    cursor: pointer;
+}
+.answer2Box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(31, 59, 100, 0.228);
+    cursor: pointer;
+}
+.answer3Box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(31, 59, 100, 0.228);
+    cursor: pointer;
+}
+.answer3Box:hover{
+    background-color: rgb(228, 213, 12);
+}
+.answer2Box:hover{
+    background-color: rgb(228, 213, 12);
+}
+    .answer1Box:hover{
+        background-color: rgb(228, 213, 12);
+    }
+
+
+
+
+.answer-here{
+    color: gray;
+    cursor: pointer;
+}
+.ques1Box,.ques2Box,.ques3Box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    margin-top:1vh;
+    /* padding: 1vh; */
+
+
+}
+.questionOneText,.questionTwoText,.questionThreeText{
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+}
+.question1Words, .question2Words, .question3Words{
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+.answer1Box,.answer2Box,.answer3Box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width:20vw;
+    height: 15vh;
+    right:0;
+    float:right;
+    margin: 3vh 0vw;
+
+}
+.marks1text,.marks2text,.marks3text{
+    margin-left: 50%;
+
+}
+.warning-message{
+    display: flex;
+    justify-content: left;
+    align-items: flex-start ;
+    margin: 5vh 0;
+    width: 50%;
+}

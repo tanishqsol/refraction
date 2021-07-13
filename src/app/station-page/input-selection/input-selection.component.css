@@ -4,6 +4,21 @@ margin-bottom:1vh;
 width:2vw;
 border:1px solid black;
 }
+.plusminus:hover{
+    background-color: yellow ;
+    cursor: pointer;
+}
+
+.zeroToTen:hover{
+    background-color: yellow ;
+    cursor: pointer;
+
+}
+.decimalClass:hover{
+    background-color: yellow ;
+    cursor: pointer;
+
+}
 .zeroToTen{
 height:4vh;
 margin-bottom:1vh;

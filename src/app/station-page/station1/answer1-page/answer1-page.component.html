@@ -37,19 +37,28 @@
                     fxLayoutAlign="space-between">
                     <button mat-raised-button
                             color="primary"
+                            [disabled]="disableRotatePlus5"
                             (click)="rotatePlus5()">Rotate + 5</button>
                     <button mat-raised-button
                             color="primary"
+                            [disabled]="disableRotateMinus5"
                             (click)="rotateMinus5()">Rotate - 5</button>
                </div>
+
                <div class="rotateImageDiv"
                     #rotateDiv
                     fxLayoutAlign="center center">
+                    <div class="mamValue180">
+                         {{mamaValue180}}
+                    </div>
+                    <div class="mamValue90">
+                         {{mamaValue90}}
+                    </div>
                     <button mat-raised-button
                             color="primary"
                             (click)="openDialog()"
                             class="powerTopButton">{{targetValue?targetValue:'Power'}}</button>
-                    <img src="../../../../assets/images/cartPlane-2.png"
+                    <img src="../../../../assets/images/cartPlane-2-2.png"
                          class="rotateImage">
                     <button mat-raised-button
                             color="primary"

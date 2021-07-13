@@ -1,1 +1,97 @@
-<p>station4 works!</p>
+<mat-toolbar class="toolbar">
+    <button class="toolbar-buttons"
+            mat-raised-button
+            color="primary"
+            (click)="goBack()">Cancel</button>
+    <button class="toolbar-buttons"
+            mat-raised-button
+            color="primary"
+            (click)="finishStation1()">Finish Station</button>
+</mat-toolbar>
+<div class="main-container">
+    <div class="heading">
+        <p>Please choose which mark sheet to answer</p>
+    </div>
+
+    <div class="mark-sheets"
+         fxLayout="row">
+        <div class="right-eye"
+             fxLayoutAlign="space-around center"
+             fxLayout="column">
+            <h3>Mark Sheet 1</h3>
+            <p>Simulated retinoscope - Right Eye</p>
+        </div>
+        <div class="left-eye"
+             fxLayoutAlign="space-around center"
+             fxLayout="column">
+            <h3>Mark Sheet 1</h3>
+            <p>Simulated retinoscope - Left Eye</p>
+        </div>
+    </div>
+
+    <div class="introduction">
+        <p>Introduction</p>
+    </div>
+
+    <div class="warning-message">
+        <p>Please use a retinoscopeand perform a cycloplegic retinoscopy on patient's RIGHT eye.<br> the task must be
+            performed WITHOUT A TRIAL FRAME
+        </p>
+    </div>
+
+    <div class="question1"
+         (click)="goToAnswer1Page()" fxLayout="column">
+        <div class="ques1Box" fxLayout="row" fxLayoutAlign="start space-between">
+            <p class=question1text>Question 1</p>
+            <p class=marks1text>12 marks</p>
+        </div>
+        <div class="questionOneText" fxLayout="row" fxLayoutAlign="end center">
+            <p class="question1Words">
+                Please record the gross retinoscopy (i.e without removing the working distance) in the box <br><br>
+                You may provide your answer in positive or negitice cylender format as a power cross.
+                <br><br>
+                DO NOT ENTER YOUR FINAL PRESCRIPTION HERE
+            </p>
+            <div class="answer1Box">
+                <h2 class="answer-here">Answer Here</h2>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="question2"
+         (click)="goToAnswer2Page()">
+        <div class="ques2Box">
+            <p class=question2text>Question 2</p>
+            <p class=marks2text>1 mark</p>
+        </div>
+        <div class="questionTwoText">
+            <p class=question2Words>
+                Please record your working distance in centemeters and diopters.
+            </p>
+            <div class="answer2Box">
+                <h2 class="answer-here">Answer Here</h2>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="question3"
+         (click)="goToAnswer3Page()">
+        <div class="ques3Box" fxLayoutAlign="space-between center">
+            <p class=question1text>Question 3</p>
+            <p class=marks3text>2 marks</p>
+        </div>
+        <div class="questionThreeText">
+            <p class="question3Words">
+                Please correct your retinoscopy for your working distance and record your final prescription in positive
+                and negitive cylender format in the box
+            </p>
+            <div class="answer3Box">
+                <h2 class="answer-here">Answer Here</h2>
+            </div>
+        </div>
+
+
+    </div>
+</div>

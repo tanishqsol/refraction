@@ -14,6 +14,11 @@ export class Answer1PageComponent implements OnInit {
   @ViewChild('rotateDiv') el: ElementRef;
   targetValue: any;
   // power='power';
+  mamaValue180: any = 180;
+  mamaValue90: any = 90;
+  showLimitError: boolean = false;
+  disableRotatePlus5: boolean = false;
+  disableRotateMinus5: boolean = false;
   constructor(private location: Location, private route: Router, public dialog: MatDialog) { }
   isActive = true;
   ngOnInit(): void {
@@ -22,20 +27,39 @@ export class Answer1PageComponent implements OnInit {
     this.location.back();
   }
   rotatePlus5() {
-    this.el.nativeElement.style.transform += "rotate(-7deg)";
+    this.disableRotateMinus5 = false;
+    this.el.nativeElement.style.transform += "rotate(-5deg)";
+    this.mamaValue180 += 5;
+    this.mamaValue90 += 5;
+    if (this.mamaValue180 > 265 || this.mamaValue90 > 175) {
+      alert("Limits Reached")
+      this.disableRotatePlus5 = true;
+    }
   }
   rotateMinus5() {
-    this.el.nativeElement.style.transform += "rotate(+7deg)";
+    this.disableRotatePlus5 = false;
+    this.el.nativeElement.style.transform += "rotate(+5deg)";
+    this.mamaValue180 -= 5;
+    this.mamaValue90 -= 5;
+    if (this.mamaValue180 < 95 || this.mamaValue90 < 5) {
+      alert("Limits Reached")
+      this.disableRotateMinus5 = true;
+    }
   }
   resetRotation() {
     this.el.nativeElement.style.transform = "rotate(0deg)";
+    this.mamaValue180 = 180;
+    this.mamaValue90 = 90;
+    this.disableRotateMinus5 = false;
+    this.disableRotatePlus5 = false;
+
 
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(InputSelectionComponent, {
       width: '15vw',
       height: '80vh',
-      data: {targetValue: this.targetValue}
+      data: { targetValue: this.targetValue }
     });
 
     dialogRef.afterClosed().subscribe(result => {

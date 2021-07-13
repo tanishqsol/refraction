@@ -23,12 +23,33 @@ margin:3vh;
     border: 1px solid gray;
     padding:1vh;
 }
-.red-class{
-    background: yellow;
+.mamValue180{
+    position: absolute;
+    left: 2vw;
+    height: 6vh;
+    width: 6vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    font-size: xx-large;
+}
+
+.mamValue90{
+    position: absolute;
+    bottom: 0vw;
+    height: 4vh;
+    width: 6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
 }
 .question1Main{
     width: 50%;
 
+}
+.rotateImageDiv{
+    position: relative;
 }
 .question1Words{
     padding: 4vh;
@@ -38,8 +59,6 @@ margin:3vh;
     float:right;
 }
 .rotateImage{
-    /* margin: 30%; */
-    /* margin: auto; */
     height:40vh;
 }
 .powerTopButton{
