@@ -13,8 +13,8 @@ import { Station4Component } from './station-page/station4/station4.component';
 import { Station5Component } from './station-page/station5/station5.component';
 
 const routes: Routes = [
-  { path: '', component: RefractionPageComponent, pathMatch: 'full' },
-  { path: 'refraction', component: RefractionPageComponent, pathMatch: 'full' },
+  { path: '', component: RefractionPageComponent},
+  { path: 'refraction', component: RefractionPageComponent},
   { path: 'refraction/stationPage', component: StationPageComponent },
   { path: 'refraction/stationPage/station1', component: Station1Component },
   { path: 'refraction/stationPage/station2', component: Station2Component },

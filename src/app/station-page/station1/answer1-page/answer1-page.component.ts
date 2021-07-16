@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { ElementRef } from '@angular/core';
@@ -15,10 +15,16 @@ export class Answer1PageComponent implements OnInit {
   targetValue: any;
   // power='power';
   mamaValue180: any = 180;
+  targetValueAnswer1powerTop: any = "";
+  targetValueAnswer1powerRight: any = "";
+  targetValueAnswer1Sphere: any = "";
+  targetValueAnswer1Cylinder: any = "";
+  targetValueAnswer1Axis: any = "";
   mamaValue90: any = 90;
   showLimitError: boolean = false;
   disableRotatePlus5: boolean = false;
   disableRotateMinus5: boolean = false;
+  positionOfPower: any;
   constructor(private location: Location, private route: Router, public dialog: MatDialog) { }
   isActive = true;
   ngOnInit(): void {
@@ -55,16 +61,23 @@ export class Answer1PageComponent implements OnInit {
 
 
   }
-  openDialog(): void {
+  openDialog(positionOfPower): void {
     const dialogRef = this.dialog.open(InputSelectionComponent, {
       width: '15vw',
       height: '80vh',
-      data: { targetValue: this.targetValue }
+      data: {
+        positionOfPower: positionOfPower
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.targetValue = result;
+      console.log("this is the result: ", result)
+
+      this.targetValueAnswer1powerTop = positionOfPower === 'powerAnswer1Top' ? result : 0;
+      this.targetValueAnswer1powerRight = positionOfPower === 'powerAnswer1Right' ? result : 0;
+      this.targetValueAnswer1Sphere = positionOfPower === 'alternateAnswer1Sphere' ? result : 0;
+      this.targetValueAnswer1Cylinder = positionOfPower === 'alternateAnswer1Cylinder' ? result : 0;
+      this.targetValueAnswer1Axis = positionOfPower === 'alternateAnswer1Axis' ? result : 0;
     });
   }
 }

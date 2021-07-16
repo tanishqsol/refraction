@@ -56,15 +56,15 @@
                     </div>
                     <button mat-raised-button
                             color="primary"
-                            (click)="openDialog()"
-                            class="powerTopButton">{{targetValue?targetValue:'Power'}}</button>
+                            (click)="openDialog('powerAnswer1Top')"
+                            class="powerTopButton">{{targetValueAnswer1powerTop?targetValueAnswer1powerTop:'Power'}}</button>
                     <img src="../../../../assets/images/cartPlane-2-2.png"
                          class="rotateImage">
                     <button mat-raised-button
                             color="primary"
-                            (click)="openDialog()"
+                            (click)="openDialog('powerAnswer1Right')"
                             class="
-                        powerRightButton">Power</button>
+                        powerRightButton">{{targetValueAnswer1powerRight?targetValueAnswer1powerRight:'Power'}}</button>
                </div>
                <div>
                     <button class="resetButton"
@@ -88,13 +88,13 @@
                fxLayoutAlign="center center">
                <input placeholder="Sphere"
                       class="sphereInput"
-                      (click)="openDialog()">
+                      (click)="openDialog('alternateAnswer1Sphere')">
                <input placeholder="Cylender"
                       class="cylenderInput"
-                      (click)="openDialog()">
+                      (click)="openDialog('alternateAnswer1Cylinder')">
                <input placeholder="Axis"
                       class="axisInput"
-                      (click)="openDialog()">
+                      (click)="openDialog('alternateAnswer1Axis')">
           </div>
 
      </div>
