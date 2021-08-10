@@ -32,26 +32,61 @@ export class Answer1PageComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+
   rotatePlus5() {
-    this.disableRotateMinus5 = false;
-    this.el.nativeElement.style.transform += "rotate(-5deg)";
-    this.mamaValue180 += 5;
-    this.mamaValue90 += 5;
-    if (this.mamaValue180 > 265 || this.mamaValue90 > 175) {
-      alert("Limits Reached")
-      this.disableRotatePlus5 = true;
+    // if section2 is Active, then
+    //alert(To answer this question in Power Cross format the values you have entered into the Spherocylinder will be removed\n\nAre you sure you want to proceed')
+    //alert('To answer this question in Spherocylinder format the values you have entered into the Power Cross will be removed\n\nAre you sure you want to proceed')
+
+    if (this.mamaValue180 < 180 && this.mamaValue180 >90) {
+      this.mamaValue180 += 5;
+      this.mamaValue90 += 5;
+      this.el.nativeElement.style.transform += "rotate(-5deg)";
     }
+    else if (this.mamaValue180 == 90 && this.mamaValue90 == 180) {
+          alert ("Invalid axis - rotation beyond axis limit");
+          this.disableRotatePlus5 = true;
+    }
+    else if (this.mamaValue180 >=5 && this.mamaValue180 < 89) {
+            	this.mamaValue180 +=5;
+            	this.mamaValue90 += 5;
+            	this.el.nativeElement.style.transform += "rotate(-5deg)";
+    }
+    else if (this.mamaValue180 == 180 && this.mamaValue90 == 90) {
+          this.mamaValue180=5;
+          this.mamaValue90 +=5;
+          this.el.nativeElement.style.transform += "rotate(-5deg)";
+    }
+    this.disableRotateMinus5 = false;
   }
+
   rotateMinus5() {
-    this.disableRotatePlus5 = false;
-    this.el.nativeElement.style.transform += "rotate(+5deg)";
-    this.mamaValue180 -= 5;
-    this.mamaValue90 -= 5;
-    if (this.mamaValue180 < 95 || this.mamaValue90 < 5) {
-      alert("Limits Reached")
+
+    if (this.mamaValue180 <= 180 && this.mamaValue180 >90) {
+      this.mamaValue180 -= 5;
+      this.mamaValue90 -= 5;
+      this.el.nativeElement.style.transform += "rotate(+5deg)";
+    }
+    else if (this.mamaValue180 == 90 && this.mamaValue90 == 0) {
+      alert ("Invalid axis - rotation beyond axis limit")
       this.disableRotateMinus5 = true;
     }
+    else if (this.mamaValue180 == 5) {
+      this.el.nativeElement.style.transform = "rotate(0deg)";
+      this.mamaValue180 = 180;
+      this.mamaValue90 = 90;
+      this.disableRotateMinus5 = false;
+      this.disableRotatePlus5 = false;
+    }
+    else if (this.mamaValue180 > 5 && this.mamaValue180 <= 90) {
+      this.mamaValue180 -=5;
+      this.mamaValue90 -= 5;
+      this.el.nativeElement.style.transform += "rotate(+5deg)";
+    }
+    this.disableRotatePlus5 = false;
   }
+
+
   resetRotation() {
     this.el.nativeElement.style.transform = "rotate(0deg)";
     this.mamaValue180 = 180;
