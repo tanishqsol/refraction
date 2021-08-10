@@ -58,8 +58,6 @@ export class Answer1PageComponent implements OnInit {
     this.mamaValue90 = 90;
     this.disableRotateMinus5 = false;
     this.disableRotatePlus5 = false;
-
-
   }
   openDialog(positionOfPower): void {
     const dialogRef = this.dialog.open(InputSelectionComponent, {
