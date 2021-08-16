@@ -94,6 +94,7 @@ export class Answer1PageComponent implements OnInit {
     this.disableRotateMinus5 = false;
     this.disableRotatePlus5 = false;
   }
+  
   openDialog(positionOfPower): void {
     const dialogRef = this.dialog.open(InputSelectionComponent, {
       width: '15vw',

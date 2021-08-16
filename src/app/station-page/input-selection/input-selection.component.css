@@ -25,6 +25,14 @@ margin-bottom:1vh;
 width:2vw;
 border:1px solid black;
 }
+.yelloBoxClass
+{
+    height:4vh;
+margin-bottom:1vh;
+width:2vw;
+border:1px solid black;
+background-color: yellow;
+}
 .decimalClass{
 height:4vh;
 margin-bottom:1vh;

@@ -11,40 +11,45 @@ export class InputSelectionComponent implements OnInit {
   positionOfPower: any;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
   targetValue;
+  defaultLoad = [];
   targetValueAnswer1powerTop: any = "";
   targetValueAnswer1powerRight: any = "";
   targetValueAnswer1Sphere: any = "";
   targetValueAnswer1Cylinder: any = "";
   targetValueAnswer1Axis: any = "";
-  isPlusMinusChosen: boolean = true;
-  isZeroToTenChosen: boolean = true;
-  isDecimalChosen: boolean = true;
+  isPlusMinusChosen: boolean = false;
+  isZeroToTenChosen: boolean = false;
+  isDecimalChosen: boolean = false;
   plusMinus = ["+", "-"]
   zeroToTen = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   decimalFloat = [".00", ".25", ".50", ".75"]
   ngOnInit(): void {
     this.positionOfPower = this.data.positionOfPower
+    this.defaultLoad[0] = this.plusMinus[0]
+    this.defaultLoad[1] = this.zeroToTen[0]
+    this.defaultLoad[2] = this.decimalFloat[0]
+    this.targetValue = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
     console.log(this.positionOfPower)
   }
-  appendZeroToTen(val) {
-    if (this.positionOfPower === 'powerAnswer1Top') { }
-    this.targetValue += val.toString()
-    this.isTenChosen = val == "10" ? true : false;
-    this.targetValue = this.targetValue.length > 5 ? "" : this.targetValue
+
+  appendZeroToTen(val, event) {
+    console.log(event)
+    this.defaultLoad[1] = val
+    this.targetValue = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
+    this.isZeroToTenChosen = event.checked ? true : false
   }
   appendPlusMinus(val) {
-    this.targetValue += val.toString()
-    this.targetValue = this.targetValue.length > 5 ? "" : this.targetValue
+    this.defaultLoad[0] = val
+    this.targetValue = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
+    this.isPlusMinusChosen = true;
+
   }
   appendDecimal(val) {
-    this.targetValue += val.toString()
-    if (this.isTenChosen) {
-      this.targetValue = this.targetValue.length > 6 ? "" : this.targetValue
-    }
-    else {
-      this.targetValue = this.targetValue.length > 5 ? "" : this.targetValue
-    }
+    this.defaultLoad[2] = val
+    this.targetValue = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
+    this.isDecimalChosen = true;
   }
+
   setAppropriatePowerValue() {
     this.targetValueAnswer1powerTop = this.positionOfPower === 'powerAnswer1Top' ? this.targetValue : ""
     this.targetValueAnswer1powerRight = this.positionOfPower === 'powerAnswer1Right' ? this.targetValue : ""

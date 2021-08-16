@@ -15,10 +15,11 @@
     <div fxLayout="column">
 
         <div class="zeroToTen"
-             *ngFor="let number of zeroToTen"
+             *ngFor="let number of zeroToTen; index as i"
              fxLayoutAlign="center center"
              fxLayout="column"
-             (click)="appendZeroToTen(number)">
+             (click)="appendZeroToTen(number, i)"
+             >
             {{number}}
         </div>
 
