@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+
 import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,6 +42,7 @@ import { InputSelectionComponent } from './station-page/input-selection/input-se
     BrowserModule,
     MatFormFieldModule,
     FlexLayoutModule,
+    FormsModule,
     MatButtonModule,
     MatToolbarModule,
     MatDialogModule,

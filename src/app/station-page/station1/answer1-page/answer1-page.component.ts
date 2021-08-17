@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ElementRef } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -13,7 +14,6 @@ import { InputSelectionComponent } from '../../input-selection/input-selection.c
 export class Answer1PageComponent implements OnInit {
   @ViewChild('rotateDiv') el: ElementRef;
   targetValue: any;
-  // power='power';
   mamaValue180: any = 180;
   targetValueAnswer1powerTop: any = "";
   targetValueAnswer1powerRight: any = "";
@@ -106,12 +106,21 @@ export class Answer1PageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log("this is the result: ", result)
-
-      this.targetValueAnswer1powerTop = positionOfPower === 'powerAnswer1Top' ? result : 0;
-      this.targetValueAnswer1powerRight = positionOfPower === 'powerAnswer1Right' ? result : 0;
-      this.targetValueAnswer1Sphere = positionOfPower === 'alternateAnswer1Sphere' ? result : 0;
-      this.targetValueAnswer1Cylinder = positionOfPower === 'alternateAnswer1Cylinder' ? result : 0;
-      this.targetValueAnswer1Axis = positionOfPower === 'alternateAnswer1Axis' ? result : 0;
+      if(positionOfPower === 'powerAnswer1Top'){
+        this.targetValueAnswer1powerTop = result  
+      }
+      else if(positionOfPower === 'powerAnswer1Right'){
+        this.targetValueAnswer1powerRight = result  
+      }
+      else if(positionOfPower === 'alternateAnswer1Sphere'){
+        this.targetValueAnswer1Sphere = result  
+      }
+      else if(positionOfPower === 'alternateAnswer1Cylinder'){
+        this.targetValueAnswer1Cylinder = result  
+      }
+      else if(positionOfPower === 'alternateAnswer1Axis'){
+        this.targetValueAnswer1Axis = result  
+      }
     });
   }
 }
