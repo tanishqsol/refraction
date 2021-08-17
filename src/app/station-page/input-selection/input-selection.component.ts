@@ -52,18 +52,18 @@ export class InputSelectionComponent implements OnInit {
   appendZeroToTen(val, event) {
     console.log(event)
     this.defaultLoad[1] = val
-    this.targetValueTwo_one = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
+    this.targetValue = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
     this.selectedZeroToTen = val;
   }
   appendPlusMinus(val) {
     this.defaultLoad[0] = val
-    this.targetValueTwo_one = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
+    this.targetValue = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
     this.selectedPlusMinus = val;
 
   }
   appendDecimal(val) {
     this.defaultLoad[2] = val
-    this.targetValueTwo_one = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
+    this.targetValue = this.defaultLoad[0] + this.defaultLoad[1] + this.defaultLoad[2]
     this.selectedDecimal = val;
   }
 
