@@ -4,6 +4,13 @@ margin-bottom:1vh;
 width:2vw;
 border:1px solid black;
 }
+.selected{
+    height:4vh;
+margin-bottom:1vh;
+width:2vw;
+border:1px solid black;
+    background: rgb(255, 251, 0);
+}
 .plusminus:hover{
     background-color: yellow ;
     cursor: pointer;

@@ -8,18 +8,19 @@
         <div class="plusminus"
              *ngFor="let sign of plusMinus"
              fxLayoutAlign="center center"
+             [ngClass]="{'selected': sign==selectedPlusMinus}"
              (click)="appendPlusMinus(sign)">
             {{sign}}
         </div>
     </div>
     <div fxLayout="column">
 
-        <div class="zeroToTen"
-             *ngFor="let number of zeroToTen; index as i"
+        <div *ngFor="let number of zeroToTen; index as i"
+             class="zeroToTen"
+             (click)="appendZeroToTen(number)"
+             [ngClass]="{'selected': number==selectedZeroToTen}"
              fxLayoutAlign="center center"
-             fxLayout="column"
-             (click)="appendZeroToTen(number, i)"
-             >
+             fxLayout="column">
             {{number}}
         </div>
 
@@ -29,6 +30,7 @@
              *ngFor="let deci of decimalFloat"
              fxLayoutAlign="center center"
              fxLayout="column"
+             [ngClass]="{'selected': deci==selectedDecimal}"
              (click)="appendDecimal(deci)">
             0{{deci}}
         </div>
