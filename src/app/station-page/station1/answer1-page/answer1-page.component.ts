@@ -13,6 +13,12 @@ import { InputSelectionComponent } from '../../input-selection/input-selection.c
 })
 export class Answer1PageComponent implements OnInit {
   @ViewChild('rotateDiv') el: ElementRef;
+  // answerName =
+  //   {
+  //     answerOne: false,
+  //     answerTwo: false,
+  //     answerThree: false
+  //   };
   targetValue: any;
   mamaValue180: any = 180;
   targetValueAnswer1powerTop: any = "";
@@ -34,41 +40,37 @@ export class Answer1PageComponent implements OnInit {
   }
 
   rotatePlus5() {
-    // if section2 is Active, then
-    //alert(To answer this question in Power Cross format the values you have entered into the Spherocylinder will be removed\n\nAre you sure you want to proceed')
-    //alert('To answer this question in Spherocylinder format the values you have entered into the Power Cross will be removed\n\nAre you sure you want to proceed')
-
-    if (this.mamaValue180 < 180 && this.mamaValue180 >90) {
+    if (this.mamaValue180 < 180 && this.mamaValue180 > 90) {
       this.mamaValue180 += 5;
       this.mamaValue90 += 5;
       this.el.nativeElement.style.transform += "rotate(-5deg)";
     }
     else if (this.mamaValue180 == 90 && this.mamaValue90 == 180) {
-          alert ("Invalid axis - rotation beyond axis limit");
-          this.disableRotatePlus5 = true;
+      alert("Invalid axis - rotation beyond axis limit");
+      this.disableRotatePlus5 = true;
     }
-    else if (this.mamaValue180 >=5 && this.mamaValue180 < 89) {
-            	this.mamaValue180 +=5;
-            	this.mamaValue90 += 5;
-            	this.el.nativeElement.style.transform += "rotate(-5deg)";
+    else if (this.mamaValue180 >= 5 && this.mamaValue180 < 89) {
+      this.mamaValue180 += 5;
+      this.mamaValue90 += 5;
+      this.el.nativeElement.style.transform += "rotate(-5deg)";
     }
     else if (this.mamaValue180 == 180 && this.mamaValue90 == 90) {
-          this.mamaValue180=5;
-          this.mamaValue90 +=5;
-          this.el.nativeElement.style.transform += "rotate(-5deg)";
+      this.mamaValue180 = 5;
+      this.mamaValue90 += 5;
+      this.el.nativeElement.style.transform += "rotate(-5deg)";
     }
     this.disableRotateMinus5 = false;
   }
 
   rotateMinus5() {
 
-    if (this.mamaValue180 <= 180 && this.mamaValue180 >90) {
+    if (this.mamaValue180 <= 180 && this.mamaValue180 > 90) {
       this.mamaValue180 -= 5;
       this.mamaValue90 -= 5;
       this.el.nativeElement.style.transform += "rotate(+5deg)";
     }
     else if (this.mamaValue180 == 90 && this.mamaValue90 == 0) {
-      alert ("Invalid axis - rotation beyond axis limit")
+      alert("Invalid axis - rotation beyond axis limit")
       this.disableRotateMinus5 = true;
     }
     else if (this.mamaValue180 == 5) {
@@ -79,7 +81,7 @@ export class Answer1PageComponent implements OnInit {
       this.disableRotatePlus5 = false;
     }
     else if (this.mamaValue180 > 5 && this.mamaValue180 <= 90) {
-      this.mamaValue180 -=5;
+      this.mamaValue180 -= 5;
       this.mamaValue90 -= 5;
       this.el.nativeElement.style.transform += "rotate(+5deg)";
     }
@@ -94,32 +96,33 @@ export class Answer1PageComponent implements OnInit {
     this.disableRotateMinus5 = false;
     this.disableRotatePlus5 = false;
   }
-  
+
   openDialog(positionOfPower): void {
     const dialogRef = this.dialog.open(InputSelectionComponent, {
       width: '15vw',
       height: '80vh',
       data: {
-        positionOfPower: positionOfPower
+        positionOfPower: positionOfPower,
+        answerName: 'answerOne'
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log("this is the result: ", result)
-      if(positionOfPower === 'powerAnswer1Top'){
-        this.targetValueAnswer1powerTop = result  
+      if (positionOfPower === 'powerAnswer1Top') {
+        this.targetValueAnswer1powerTop = result
       }
-      else if(positionOfPower === 'powerAnswer1Right'){
-        this.targetValueAnswer1powerRight = result  
+      else if (positionOfPower === 'powerAnswer1Right') {
+        this.targetValueAnswer1powerRight = result
       }
-      else if(positionOfPower === 'alternateAnswer1Sphere'){
-        this.targetValueAnswer1Sphere = result  
+      else if (positionOfPower === 'alternateAnswer1Sphere') {
+        this.targetValueAnswer1Sphere = result
       }
-      else if(positionOfPower === 'alternateAnswer1Cylinder'){
-        this.targetValueAnswer1Cylinder = result  
+      else if (positionOfPower === 'alternateAnswer1Cylinder') {
+        this.targetValueAnswer1Cylinder = result
       }
-      else if(positionOfPower === 'alternateAnswer1Axis'){
-        this.targetValueAnswer1Axis = result  
+      else if (positionOfPower === 'alternateAnswer1Axis') {
+        this.targetValueAnswer1Axis = result
       }
     });
   }

@@ -22,7 +22,13 @@
     <div class="question2MainInputs"
          fxLayout="column"
          fxLayoutGap="20px">
-        <input class= "distanceInput" placeholder="Working distance in centemeters">
-        <input class = "dioptricInput" placeholder="Dioptric equivalent">
+        <input class="distanceInput"
+               (click)="openDialog('workingInCentemeters')"
+               [(ngModel)]="workingInCentemeters"
+               placeholder="Working distance in centemeters">
+        <input class="dioptricInput"
+               (click)="openDialog('dioptricEquivalent')"
+               [(ngModel)]="dioptricEquivalent"
+               placeholder="Dioptric equivalent">
     </div>
 </div>

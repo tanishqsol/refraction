@@ -1,45 +1,106 @@
-<div class="selectedValues">
-    {{targetValue}}
+<div *ngIf="answerName === 'answerTwo_one'">
+    <div class="selectedValues">
+        {{targetValueTwo_one}}
+    </div>
+
+    <div class="powerSelection"
+         fxLayout="row"
+         fxLayoutGap="30px">
+        <div fxLayout="column">
+            <div class="plusminus"
+                 *ngFor="let sign of oneToThree"
+                 fxLayoutAlign="center center"
+                 [ngClass]="{'selected': sign==selectedPlusMinus}"
+                 (click)="appendOneToThree(sign)">
+                {{sign}}
+            </div>
+        </div>
+        <div fxLayout="column">
+
+            <div *ngFor="let number of zeroToNine; index as i"
+                 class="zeroToTen"
+                 (click)="appendZeroToNine(number)"
+                 [ngClass]="{'selected': number==selectedZeroToTen}"
+                 fxLayoutAlign="center center"
+                 fxLayout="column">
+                {{number}}
+            </div>
+
+        </div>
+        <div fxLayout="column">
+            <div fxLayout="column">
+
+                <div *ngFor="let number of zeroToNine; index as i"
+                     class="zeroToTen"
+                     (click)="appendOneToThree_right(number)"
+                     [ngClass]="{'selected': number==selectedZeroToTen}"
+                     fxLayoutAlign="center center"
+                     fxLayout="column">
+                    {{number}}
+                </div>
+
+            </div>
+            <div class="closeButtonDiv">
+                <button class="closeButton"
+                        mat-raised-button
+                        color="warn"
+                        (click)="setAppropriatePowerValue()"
+                        [mat-dialog-close]="targetValue">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
-<div class="powerSelection"
-     fxLayout="row"
-     fxLayoutGap="30px">
-    <div fxLayout="column">
-        <div class="plusminus"
-             *ngFor="let sign of plusMinus"
-             fxLayoutAlign="center center"
-             [ngClass]="{'selected': sign==selectedPlusMinus}"
-             (click)="appendPlusMinus(sign)">
-            {{sign}}
+
+
+<div *ngIf="answerName === 'answerOne'">
+
+    <div class="selectedValues">
+        {{targetValue}}
+    </div>
+    <div class="powerSelection"
+         fxLayout="row"
+         fxLayoutGap="30px">
+        <div fxLayout="column">
+            <div class="plusminus"
+                 *ngFor="let sign of plusMinus"
+                 fxLayoutAlign="center center"
+                 [ngClass]="{'selected': sign==selectedPlusMinus}"
+                 (click)="appendPlusMinus(sign)">
+                {{sign}}
+            </div>
+        </div>
+        <div fxLayout="column">
+
+            <div *ngFor="let number of zeroToTen; index as i"
+                 class="zeroToTen"
+                 (click)="appendZeroToTen(number)"
+                 [ngClass]="{'selected': number==selectedZeroToTen}"
+                 fxLayoutAlign="center center"
+                 fxLayout="column">
+                {{number}}
+            </div>
+
+        </div>
+        <div fxLayout="column">
+            <div class="decimalClass"
+                 *ngFor="let deci of decimalFloat"
+                 fxLayoutAlign="center center"
+                 fxLayout="column"
+                 [ngClass]="{'selected': deci==selectedDecimal}"
+                 (click)="appendDecimal(deci)">
+                0{{deci}}
+            </div>
+            <div class="closeButtonDiv">
+                <button class="closeButton"
+                        mat-raised-button
+                        color="warn"
+                        (click)="setAppropriatePowerValue()"
+                        [mat-dialog-close]="targetValue">Close</button>
+            </div>
+
         </div>
     </div>
-    <div fxLayout="column">
-
-        <div *ngFor="let number of zeroToTen; index as i"
-             class="zeroToTen"
-             (click)="appendZeroToTen(number)"
-             [ngClass]="{'selected': number==selectedZeroToTen}"
-             fxLayoutAlign="center center"
-             fxLayout="column">
-            {{number}}
-        </div>
-
-    </div>
-    <div fxLayout="column">
-        <div class="decimalClass"
-             *ngFor="let deci of decimalFloat"
-             fxLayoutAlign="center center"
-             fxLayout="column"
-             [ngClass]="{'selected': deci==selectedDecimal}"
-             (click)="appendDecimal(deci)">
-            0{{deci}}
-        </div>
-        <div class="closeButtonDiv">
-            <button class="closeButton"
-                    mat-raised-button
-                    color="warn"
-                    (click)="setAppropriatePowerValue()"
-                    [mat-dialog-close]="targetValue">Close</button>
-        </div>
-
-    </div>
+</div>
