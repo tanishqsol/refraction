@@ -34,6 +34,8 @@ export class InputSelectionComponent implements OnInit {
   //answerTwo_one
   oneToThree = ["1", "2", "3"]
   zeroToNine = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",]
+  workingInCentemeters: any;
+  dioptricEquivalent: any;
   //answerTwo_one
 
 
@@ -78,20 +80,31 @@ export class InputSelectionComponent implements OnInit {
 
   appendOneToThree_right(val) {
     this.targetValueTwo_one = val;
-
+  }
+  targetValueToSend() {
+    if (this.data.answerName === 'answerOne') {
+      return this.targetValue
+    }
+    else if (this.data.answerName === 'answerTwo_one') {
+      return this.targetValueTwo_one
+    }
   }
 
-
   setAppropriatePowerValue() {
-    this.targetValueAnswer1powerTop = this.positionOfPower === 'powerAnswer1Top' ? this.targetValue : ""
-    this.targetValueAnswer1powerRight = this.positionOfPower === 'powerAnswer1Right' ? this.targetValue : ""
-    this.targetValueAnswer1Sphere = this.positionOfPower === 'alternateAnswer1Sphere' ? this.targetValue : ""
-    this.targetValueAnswer1Cylinder = this.positionOfPower === 'alternateAnswer1Cylinder' ? this.targetValue : ""
-    this.targetValueAnswer1Axis = this.positionOfPower === 'alternateAnswer1Axis' ? this.targetValueTwo_one : ""
+    if (this.data.answerName === 'answerOne') {
+      this.targetValueAnswer1powerTop = this.positionOfPower === 'powerAnswer1Top' ? this.targetValue : ""
+      this.targetValueAnswer1powerRight = this.positionOfPower === 'powerAnswer1Right' ? this.targetValue : ""
+      this.targetValueAnswer1Sphere = this.positionOfPower === 'alternateAnswer1Sphere' ? this.targetValue : ""
+      this.targetValueAnswer1Cylinder = this.positionOfPower === 'alternateAnswer1Cylinder' ? this.targetValue : ""
+      this.targetValueAnswer1Axis = this.positionOfPower === 'alternateAnswer1Axis' ? this.targetValue : ""
+    }
+    if (this.data.answerName === 'answerTwo_one') {
+      this.setAppropriatePowerValue_two_one();
+    }
   }
 
   setAppropriatePowerValue_two_one() {
-    this.targetValueAnswer1powerTop = this.positionOfPower === 'powerAnswer1Top' ? this.targetValueTwo_one : ""
-    this.targetValueAnswer1powerRight = this.positionOfPower === 'powerAnswer1Right' ? this.targetValueTwo_one : ""
+    this.workingInCentemeters = this.positionOfPower === 'workingInCentemeters' ? this.targetValueTwo_one : ""
+    this.dioptricEquivalent = this.positionOfPower === 'dioptricEquivalent' ? this.targetValueTwo_one : ""
   }
 }

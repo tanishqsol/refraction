@@ -32,6 +32,7 @@ export class Answer2PageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log("this is the result: ", result)
+
       if (positionOfPower === 'workingInCentemeters') {
         this.workingInCentemeters = result
       }
