@@ -1,20 +1,18 @@
-import { Component, EventEmitter, Inject, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Location } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ElementRef } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { InputSelectionComponent } from '../../input-selection/input-selection.component';
 import { DataServiceService } from '../../../data-service.service';
+import { InputSelectionComponent } from '../../input-selection/input-selection.component';
 
 @Component({
-  selector: 'app-answer1-page',
-  templateUrl: './answer1-page.component.html',
-  styleUrls: ['./answer1-page.component.css']
+  selector: 'app-answer1-st2-page',
+  templateUrl: './answer1-st2-page.component.html',
+  styleUrls: ['./answer1-st2-page.component.css']
 })
-export class Answer1PageComponent implements OnInit {
+export class Answer1St2PageComponent implements OnInit {
+
   @ViewChild('rotateDiv') el: ElementRef;
-  @Output() answerArray = new EventEmitter<any[]>();
   // answerName =
   //   {
   //     answerOne: false,
@@ -145,4 +143,5 @@ export class Answer1PageComponent implements OnInit {
       }
     });
   }
+
 }

@@ -57,14 +57,14 @@
                     <button mat-raised-button
                             color="primary"
                             (click)="openDialog('powerAnswer1Top')"
-                            class="powerTopButton">{{targetValueAnswer1powerTop?targetValueAnswer1powerTop:'Power'}}</button>
+                            class="powerTopButton">{{answeValues.targetValueAnswer1powerTop?answeValues.targetValueAnswer1powerTop:'Power'}}</button>
                     <img src="../../../../assets/images/cartPlane-2-2.png"
                          class="rotateImage">
                     <button mat-raised-button
                             color="primary"
                             (click)="openDialog('powerAnswer1Right')"
                             class="
-                        powerRightButton">{{targetValueAnswer1powerRight?targetValueAnswer1powerRight:'Power'}}</button>
+                        powerRightButton">{{answeValues.targetValueAnswer1powerRight?answeValues.targetValueAnswer1powerRight:'Power'}}</button>
                </div>
                <div>
                     <button class="resetButton"
@@ -88,15 +88,15 @@
                fxLayoutAlign="center center">
                <input placeholder="Sphere"
                       class="sphereInput"
-                      [(ngModel)]="targetValueAnswer1Sphere"
+                      [(ngModel)]="answeValues.targetValueAnswer1Sphere"
                       (click)="openDialog('alternateAnswer1Sphere')">
                <input placeholder="Cylender"
                       class="cylenderInput"
-                      [(ngModel)]="targetValueAnswer1Cylinder"
+                      [(ngModel)]="answeValues.targetValueAnswer1Cylinder"
                       (click)="openDialog('alternateAnswer1Cylinder')">
                <input placeholder="Axis"
                       class="axisInput"
-                      [(ngModel)]="targetValueAnswer1Axis"
+                      [(ngModel)]="answeValues.targetValueAnswer1Axis"
                       (click)="openDialog('alternateAnswer1Axis')">
           </div>
 

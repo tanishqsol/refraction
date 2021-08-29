@@ -5,9 +5,14 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataServiceService {
-  public isHomePage = new BehaviorSubject(true);
+  isHomePage = new BehaviorSubject(true);
+  answers = new BehaviorSubject<any[]>([]);
   constructor() { }
-  hideTopBar(val){
+  hideTopBar(val) {
     this.isHomePage.next(val);
+  }
+
+  getAnswers(val) {
+    this.answers.next(val)
   }
 }

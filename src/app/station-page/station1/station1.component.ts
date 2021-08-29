@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { DataServiceService } from '../../data-service.service';
 
 
 @Component({
@@ -9,12 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./station1.component.css']
 })
 export class Station1Component implements OnInit {
+  myAnswers: any[];
 
-  constructor(private location: Location, private route: Router) { }
-
+  constructor(private location: Location, private route: Router, private dataService: DataServiceService) { }
+  myAnswersToShow;
   ngOnInit(): void {
+    this.dataService.answers.subscribe(data => this.myAnswers= data)
+    this.myAnswersToShow= this.myAnswers.filter(val=>val!==null)
+    console.log(this.myAnswersToShow)
   }
   goBack() {
+
     this.location.back();
   }
   finishStation1() {
