@@ -7,9 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Answer2St2PageRteComponent implements OnInit {
 
-  constructor() { }
 
+  constructor(private location: Location, private route: Router, public dialog: MatDialog) { }
+  workingInCentemeters;
+  dioptricEquivalent;
   ngOnInit(): void {
+  }
+  goBack() {
+    this.location.back();
+  }
+  openDialog(positionOfPower): void {
+    const dialogRef = this.dialog.open(InputSelectionComponent, {
+      width: '15vw',
+      height: '80vh',
+      data: {
+        positionOfPower: positionOfPower,
+        answerName: 'answerTwo_one'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("this is the result: ", result)
+
+      if (positionOfPower === 'workingInCentemeters') {
+        this.workingInCentemeters = result
+      }
+      else if (positionOfPower === 'dioptricEquivalent') {
+        this.dioptricEquivalent = result
+      }
+    });
   }
 
 }
