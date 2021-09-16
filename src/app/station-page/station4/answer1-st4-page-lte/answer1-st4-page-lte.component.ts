@@ -1,9 +1,10 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
 import { InputSelectionComponent } from '../../input-selection/input-selection.component';
 import { Location } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DataServiceService } from '../../../data-service.service';
+import { ViewChild } from '@angular/core';
 
 
 @Component({

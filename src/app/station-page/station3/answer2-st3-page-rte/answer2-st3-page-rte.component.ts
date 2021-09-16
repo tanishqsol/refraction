@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { InputSelectionComponent } from '../../input-selection/input-selection.component';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-answer2-st3-page-rte',

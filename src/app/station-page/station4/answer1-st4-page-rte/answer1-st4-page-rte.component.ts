@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DataServiceService } from '../../../data-service.service';
+import { InputSelectionComponent } from '../../input-selection/input-selection.component';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-answer1-st4-page-rte',

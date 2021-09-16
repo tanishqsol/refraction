@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DataServiceService } from '../../../data-service.service';
+import { Location } from '@angular/common';
+import { InputSelectionComponent } from '../../input-selection/input-selection.component';
 
 @Component({
   selector: 'app-answer3-st2-page',
