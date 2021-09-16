@@ -1,0 +1,97 @@
+mat-toolbar{
+    background-color: #4777B2;
+}
+.toolbar-buttons{
+    margin : 0 2vw;
+}
+.question1Div{
+    width: 50%;
+    border: 1px solid gray;
+    margin-top:2vh;
+    padding:1vh;
+}
+.ques1Box{
+    border: 1px solid gray;
+    width: 100%;
+}
+.question1RotateBox{
+position:relative;
+margin:3vh;
+}
+.question1MainBox{
+    /* width: 50%; */
+    border: 1px solid gray;
+    padding:1vh;
+}
+.mamValue180{
+    position: absolute;
+    left: 2vw;
+    height: 6vh;
+    width: 6vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    font-size: xx-large;
+}
+
+.mamValue90{
+    position: absolute;
+    bottom: 0vw;
+    height: 4vh;
+    width: 6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+.question1Main{
+    width: 50%;
+
+}
+.rotateImageDiv{
+    position: relative;
+}
+.question1Words{
+    padding: 4vh;
+}
+.resetButton{
+    width:fit-content;
+    float:right;
+}
+.rotateImage{
+    height:40vh;
+}
+.powerTopButton{
+    position: sticky;
+    margin-bottom: 45vh;
+    left: 49%;
+}
+.powerRightButton{
+    position: sticky;
+    margin-bottom: 5vh;
+    right: 3vw;
+}
+.question1Alternative{
+    width: 50%;
+    margin-top:3vh;
+}
+.alternate1Box{
+    border: 1px solid gray;
+    padding:1vh;
+    width: 100%;
+
+}
+.cylenderInput,.sphereInput,.axisInput{
+    height: 6vh;
+    width: 10vw;
+}
+.alterntiveInputs{
+    margin:10vh;
+    flex-wrap: nowrap;
+    width:100%;
+}
+.active-cls{
+    border: 1px solid gray;
+    background-color: darkorange;
+    width: 10%;
+}

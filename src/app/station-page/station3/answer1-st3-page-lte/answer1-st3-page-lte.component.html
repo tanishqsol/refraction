@@ -1,1 +1,104 @@
-<p>answer1-st3-page-lte works!</p>
+<mat-toolbar class="toolbar">
+    <button class="toolbar-buttons"
+            mat-raised-button
+            color="primary"
+            (click)="goBack()">Cancel</button>
+</mat-toolbar>
+<div class="main-container"
+    fxLayoutAlign="center center"
+    fxLayout="column">
+    <div class="question1Div"
+         fxLayout="row"
+         fxLayoutAlign="space-between">
+         <span>Question 1</span>
+         <span *ngIf="isActive">Right Eye</span>
+    </div>
+    <p class="question1Words">
+         Please record the gross retinoscopy (i.e without removing the working distance) in the box <br><br>
+         You may provide your answer in positive or negitice cylender format as a power cross.
+         <br><br>
+         DO NOT ENTER YOUR FINAL PRESCRIPTION HERE
+    </p>
+    <div class="question1Main"
+         fxLayoutGap="2vh"
+         fxLayout="column">
+         <div class="question1MainBox"
+              fxLayout="row"
+              fxLayoutAlign="space-between center">
+              <span>Rotate Power Cross then complete power fields</span>
+              <span clas="active-cls"
+                    *ngIf="isActive">Active
+              </span>
+         </div>
+         <div class="question1RotateBox"
+              fxLayout="column"
+              fxLayoutGap="6vh">
+              <div class="rotateButtons"
+                   fxLayoutAlign="space-between">
+                   <button mat-raised-button
+                           color="primary"
+                           [disabled]="disableRotatePlus5"
+                           (click)="rotatePlus5()">Rotate + 5</button>
+                   <button mat-raised-button
+                           color="primary"
+                           [disabled]="disableRotateMinus5"
+                           (click)="rotateMinus5()">Rotate - 5</button>
+              </div>
+
+              <div class="rotateImageDiv"
+                   #rotateDiv
+                   fxLayoutAlign="center center">
+                   <div class="mamValue180">
+                        {{mamaValue180}}
+                   </div>
+                   <div class="mamValue90">
+                        {{mamaValue90}}
+                   </div>
+                   <button mat-raised-button
+                           color="primary"
+                           (click)="openDialog('powerAnswer1Top')"
+                           class="powerTopButton">{{answeValues1St3.targetValueAnswer1powerTop?answeValues1St3.targetValueAnswer1powerTop:'Power'}}</button>
+                   <img src="../../../../assets/images/cartPlane-2-2.png"
+                        class="rotateImage">
+                   <button mat-raised-button
+                           color="primary"
+                           (click)="openDialog('powerAnswer1Right')"
+                           class="
+                       powerRightButton">{{answeValues1St3.targetValueAnswer1powerRight?answeValues1St3.targetValueAnswer1powerRight:'Power'}}</button>
+              </div>
+              <div>
+                   <button class="resetButton"
+                           mat-raised-button
+                           color="primary"
+                           (click)="resetRotation()">Reset to 90</button>
+              </div>
+         </div>
+    </div>
+    <div class="question1Alternative"
+         fxLayout="column"
+         fxLayoutAlign="space-between center">
+         <div class="alternate1Box"
+              fxLayout="row"
+              fxLayoutAlign="space-between center">
+              <span>Alternatively enter your answer using Spherocylinder format</span>
+
+         </div>
+         <div class="alterntiveInputs"
+              fxLayoutGap="20px"
+              fxLayoutAlign="center center">
+              <input placeholder="Sphere"
+                     class="sphereInput"
+                     [(ngModel)]="answeValues1St3.targetValueAnswer1Sphere"
+                     (click)="openDialog('alternateAnswer1Sphere')">
+              <input placeholder="Cylender"
+                     class="cylenderInput"
+                     [(ngModel)]="answeValues1St3.targetValueAnswer1Cylinder"
+                     (click)="openDialog('alternateAnswer1Cylinder')">
+              <input placeholder="Axis"
+                     class="axisInput"
+                     [(ngModel)]="answeValues1St3.targetValueAnswer1Axis"
+                     (click)="openDialog('alternateAnswer1Axis')">
+         </div>
+
+    </div>
+</div>

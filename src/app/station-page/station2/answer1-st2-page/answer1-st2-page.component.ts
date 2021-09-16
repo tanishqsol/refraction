@@ -13,12 +13,6 @@ import { InputSelectionComponent } from '../../input-selection/input-selection.c
 export class Answer1St2PageComponent implements OnInit {
 
   @ViewChild('rotateDiv') el: ElementRef;
-  // answerName =
-  //   {
-  //     answerOne: false,
-  //     answerTwo: false,
-  //     answerThree: false
-  //   };
   targetValue: any;
   mamaValue180: any = 180;
   answeValues = {
@@ -40,7 +34,6 @@ export class Answer1St2PageComponent implements OnInit {
   }
   goBack() {
     this.dataService.getAnswers([this.answeValues.targetValueAnswer1powerTop, this.answeValues.targetValueAnswer1powerRight, this.answeValues.targetValueAnswer1Axis, this.answeValues.targetValueAnswer1Cylinder, this.answeValues.targetValueAnswer1Sphere]);
-    // this.dataService.getAnswers([this.answeValues[0] ? this.answeValues[0] : null, this.answeValues[1] ? this.answeValues[1] : null, this.answeValues[2] ? this.answeValues[2] : null, this.answeValues[3] ? this.answeValues[3] : null, this.answeValues[4] ? this.answeValues[4] : null]);
     this.location.back();
   }
 

@@ -17,14 +17,16 @@
          fxLayout="row">
         <div class="right-eye"
              fxLayoutAlign="space-around center"
-             fxLayout="column">
+             fxLayout="column"
+             (click)="goToLeft()">
             <h3>Mark Sheet 1</h3>
             <p>Simulated retinoscope - Right Eye</p>
         </div>
         <div class="left-eye"
              fxLayoutAlign="space-around center"
-             fxLayout="column">
-            <h3>Mark Sheet 1</h3>
+             fxLayout="column"
+             (click)="goToRight()">
+            <h3>Mark Sheet 2</h3>
             <p>Simulated retinoscope - Left Eye</p>
         </div>
     </div>
@@ -58,7 +60,7 @@
                 DO NOT ENTER YOUR FINAL PRESCRIPTION HERE
             </p>
             <div class="answer1Box">
-                <h2 class="answer-here">{{myAnswersToShow.length && myAnswersToShow? myAnswersToShow :'Answer Here'}}
+                <h2 class="answer-here">{{myAnswers1rte.length && myAnswers1rte? myAnswers1rte :'Answer Here'}}
                 </h2>
             </div>
         </div>
@@ -76,7 +78,7 @@
                 Please record your working distance in centemeters and diopters.
             </p>
             <div class="answer2Box">
-                <h2 class="answer-here">{{myAnswersToShow.length && myAnswersToShow? myAnswersToShow :'Answer Here'}}
+                <h2 class="answer-here">{{myAnswers2rte.length && myAnswers2rte? myAnswers2rte :'Answer Here'}}
                 </h2>
             </div>
         </div>
@@ -96,7 +98,7 @@
                 and negitive cylender format in the box
             </p>
             <div class="answer3Box">
-                <h2 class="answer-here">{{myAnswersToShow.length && myAnswersToShow? myAnswersToShow :'Answer Here'}}
+                <h2 class="answer-here">{{myAnswers3rte.length && myAnswers3rte? myAnswers3rte :'Answer Here'}}
                 </h2>
             </div>
         </div>

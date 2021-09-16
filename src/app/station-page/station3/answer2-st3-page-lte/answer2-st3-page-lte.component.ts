@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { InputSelectionComponent } from '../../input-selection/input-selection.component';
+import { Location } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DataServiceService } from '../../../data-service.service';
 
 @Component({
   selector: 'app-answer2-st3-page-lte',
@@ -6,7 +11,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./answer2-st3-page-lte.component.css']
 })
 export class Answer2St3PageLteComponent implements OnInit {
-
 
   constructor(private location: Location, private route: Router, public dialog: MatDialog) { }
   workingInCentemeters;

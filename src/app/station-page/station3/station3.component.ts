@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { DataServiceService } from '../../data-service.service';
 
 @Component({
   selector: 'app-station3',
@@ -9,9 +10,14 @@ import { Router } from '@angular/router';
 })
 export class Station3Component implements OnInit {
 
-  constructor(private location: Location, private route: Router) { }
+  myAnswers: any[];
 
+  constructor(private location: Location, private route: Router, private dataService: DataServiceService) { }
+  myAnswersToShow;
   ngOnInit(): void {
+    this.dataService.answers.subscribe(data => this.myAnswers= data)
+    this.myAnswersToShow= this.myAnswers.filter(val=>val!==null)
+    console.log(this.myAnswersToShow)
   }
   goBack() {
     this.location.back();
@@ -28,6 +34,4 @@ export class Station3Component implements OnInit {
   goToAnswer3Page() {
     this.route.navigate(['/refraction/stationPage/station1/answer3'])
   }
-
-
 }

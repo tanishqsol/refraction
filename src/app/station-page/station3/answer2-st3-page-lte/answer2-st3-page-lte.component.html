@@ -1,1 +1,34 @@
-<p>answer2-st3-page-lte works!</p>
+<mat-toolbar class="toolbar">
+     <button class="toolbar-buttons"
+             mat-raised-button
+             color="primary"
+             (click)="goBack()">Cancel</button>
+ </mat-toolbar>
+ 
+ <div class="main-container"
+      fxLayoutAlign="space-between center"
+      fxLayoutGap="20px"
+      fxLayout="column">
+     <div class="question2Box">
+         <span>Question 2</span>
+     </div>
+ 
+     <div class="question2Words">
+         <p>Please record your working distance in centemeters and diopters</p>
+     </div>
+     <div class="question2MainBox">
+         <span>Insert Your working distance and dioptric equivalent</span>
+     </div>
+     <div class="question2MainInputs"
+          fxLayout="column"
+          fxLayoutGap="20px">
+         <input class="distanceInput"
+                (click)="openDialog('workingInCentemeters')"
+                [(ngModel)]="workingInCentemeters"
+                placeholder="Working distance in centemeters">
+         <input class="dioptricInput"
+                (click)="openDialog('dioptricEquivalent')"
+                [(ngModel)]="dioptricEquivalent"
+                placeholder="Dioptric equivalent">
+     </div>
+ </div>

@@ -28,9 +28,6 @@ import { Answer3St2PageComponent } from './station-page/station2/answer3-st2-pag
 import { Answer1St2PageRteComponent } from './station-page/station2/answer1-st2-page-rte/answer1-st2-page-rte.component';
 import { Answer2St2PageRteComponent } from './station-page/station2/answer2-st2-page-rte/answer2-st2-page-rte.component';
 import { Answer3St2PageRteComponent } from './station-page/station2/answer3-st2-page-rte/answer3-st2-page-rte.component';
-import { Answer1St1PageRteComponent } from './station-page/station1/answer1-st1-page-rte/answer1-st1-page-rte.component';
-import { Answer2St1PageRteComponent } from './station-page/station1/answer2-st1-page-rte/answer2-st1-page-rte.component';
-import { Answer3St1PageRteComponent } from './station-page/station1/answer3-st1-page-rte/answer3-st1-page-rte.component';
 import { Answer3St3PageRteComponent } from './station-page/station3/answer3-st3-page-rte/answer3-st3-page-rte.component';
 import { Answer2St3PageRteComponent } from './station-page/station3/answer2-st3-page-rte/answer2-st3-page-rte.component';
 import { Answer1St3PageRteComponent } from './station-page/station3/answer1-st3-page-rte/answer1-st3-page-rte.component';
@@ -49,6 +46,10 @@ import { Answer3St5PageRteComponent } from './station-page/station5/answer3-st5-
 import { Answer1St5PageLteComponent } from './station-page/station5/answer1-st5-page-lte/answer1-st5-page-lte.component';
 import { Answer2St5PageLteComponent } from './station-page/station5/answer2-st5-page-lte/answer2-st5-page-lte.component';
 import { Answer3St5PageLteComponent } from './station-page/station5/answer3-st5-page-lte/answer3-st5-page-lte.component';
+import { Station1RightComponent } from './station-page/station1/station1-right/station1-right.component';
+import { Answer1St1PageRteComponent } from './station-page/station1/station1-right/answer1-st1-page-rte/answer1-st1-page-rte.component';
+import { Answer2St1PageRteComponent } from './station-page/station1/station1-right/answer2-st1-page-rte/answer2-st1-page-rte.component';
+import { Answer3St1PageRteComponent } from './station-page/station1/station1-right/answer3-st1-page-rte/answer3-st1-page-rte.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { Answer3St5PageLteComponent } from './station-page/station5/answer3-st5-
     Answer3St5PageRteComponent,
     Answer1St5PageLteComponent,
     Answer2St5PageLteComponent,
-    Answer3St5PageLteComponent
+    Answer3St5PageLteComponent,
+    Station1RightComponent
   ],
   imports: [
     BrowserModule,

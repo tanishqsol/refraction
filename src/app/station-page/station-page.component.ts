@@ -48,7 +48,6 @@ export class StationPageComponent implements OnInit {
     }
   }
   station1Click() {
-
     this.station1color = !this.station1color
   }
   station2Click() {

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { InputSelectionComponent } from '../../input-selection/input-selection.component';
 
 @Component({
   selector: 'app-answer2-st2-page',
@@ -6,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./answer2-st2-page.component.css']
 })
 export class Answer2St2PageComponent implements OnInit {
-
 
   constructor(private location: Location, private route: Router, public dialog: MatDialog) { }
   workingInCentemeters;
@@ -37,5 +40,4 @@ export class Answer2St2PageComponent implements OnInit {
       }
     });
   }
-
 }

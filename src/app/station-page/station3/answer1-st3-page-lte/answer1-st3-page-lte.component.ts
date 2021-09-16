@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { InputSelectionComponent } from '../../input-selection/input-selection.component';
+import { Location } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DataServiceService } from '../../../data-service.service';
 @Component({
   selector: 'app-answer1-st3-page-lte',
   templateUrl: './answer1-st3-page-lte.component.html',
@@ -8,15 +12,10 @@ import { Component, OnInit } from '@angular/core';
 export class Answer1St3PageLteComponent implements OnInit {
 
   @ViewChild('rotateDiv') el: ElementRef;
-  // answerName =
-  //   {
-  //     answerOne: false,
-  //     answerTwo: false,
-  //     answerThree: false
-  //   };
+  @Output() answerArray = new EventEmitter<any[]>();
   targetValue: any;
   mamaValue180: any = 180;
-  answeValues = {
+  answeValues1St3 = {
     targetValueAnswer1powerTop: '',
     targetValueAnswer1powerRight: '',
     targetValueAnswer1Sphere: '',
@@ -34,8 +33,8 @@ export class Answer1St3PageLteComponent implements OnInit {
   ngOnInit(): void {
   }
   goBack() {
-    this.dataService.getAnswers([this.answeValues.targetValueAnswer1powerTop, this.answeValues.targetValueAnswer1powerRight, this.answeValues.targetValueAnswer1Axis, this.answeValues.targetValueAnswer1Cylinder, this.answeValues.targetValueAnswer1Sphere]);
-    // this.dataService.getAnswers([this.answeValues[0] ? this.answeValues[0] : null, this.answeValues[1] ? this.answeValues[1] : null, this.answeValues[2] ? this.answeValues[2] : null, this.answeValues[3] ? this.answeValues[3] : null, this.answeValues[4] ? this.answeValues[4] : null]);
+    this.dataService.getAnswers([this.answeValues1St3.targetValueAnswer1powerTop, this.answeValues1St3.targetValueAnswer1powerRight, this.answeValues1St3.targetValueAnswer1Axis, this.answeValues1St3.targetValueAnswer1Cylinder, this.answeValues1St3.targetValueAnswer1Sphere]);
+
     this.location.back();
   }
 
@@ -98,17 +97,17 @@ export class Answer1St3PageLteComponent implements OnInit {
   }
 
   openDialog(positionOfPower): void {
-    if ((this.answeValues.targetValueAnswer1powerTop || this.answeValues.targetValueAnswer1powerRight) && ((positionOfPower === 'alternateAnswer1Sphere') || (positionOfPower === 'alternateAnswer1Cylinder') || (positionOfPower === '`alternateAnswer1Axis'))) {
+    if ((this.answeValues1St3.targetValueAnswer1powerTop || this.answeValues1St3.targetValueAnswer1powerRight) && ((positionOfPower === 'alternateAnswer1Sphere') || (positionOfPower === 'alternateAnswer1Cylinder') || (positionOfPower === '`alternateAnswer1Axis'))) {
       alert('this will reset previous selection')
-      this.answeValues.targetValueAnswer1powerTop = null;
-      this.answeValues.targetValueAnswer1powerRight = null;
+      this.answeValues1St3.targetValueAnswer1powerTop = null;
+      this.answeValues1St3.targetValueAnswer1powerRight = null;
     }
 
-    else if ((this.answeValues.targetValueAnswer1Sphere || this.answeValues.targetValueAnswer1Cylinder || this.answeValues.targetValueAnswer1Axis) && ((positionOfPower === 'powerAnswer1Top') || (positionOfPower === 'powerAnswer1Right'))) {
+    else if ((this.answeValues1St3.targetValueAnswer1Sphere || this.answeValues1St3.targetValueAnswer1Cylinder || this.answeValues1St3.targetValueAnswer1Axis) && ((positionOfPower === 'powerAnswer1Top') || (positionOfPower === 'powerAnswer1Right'))) {
       alert('this will reset previous selection')
-      this.answeValues.targetValueAnswer1Sphere = null;
-      this.answeValues.targetValueAnswer1Cylinder = null;
-      this.answeValues.targetValueAnswer1Axis = null;
+      this.answeValues1St3.targetValueAnswer1Sphere = null;
+      this.answeValues1St3.targetValueAnswer1Cylinder = null;
+      this.answeValues1St3.targetValueAnswer1Axis = null;
     }
     const dialogRef = this.dialog.open(InputSelectionComponent, {
       width: '15vw',
@@ -122,22 +121,20 @@ export class Answer1St3PageLteComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log("this is the result: ", result)
       if (positionOfPower === 'powerAnswer1Top') {
-        this.answeValues.targetValueAnswer1powerTop = result
+        this.answeValues1St3.targetValueAnswer1powerTop = result
       }
       else if (positionOfPower === 'powerAnswer1Right') {
-        this.answeValues.targetValueAnswer1powerRight = result
+        this.answeValues1St3.targetValueAnswer1powerRight = result
       }
       else if (positionOfPower === 'alternateAnswer1Sphere') {
-        this.answeValues.targetValueAnswer1Sphere = result
+        this.answeValues1St3.targetValueAnswer1Sphere = result
       }
       else if (positionOfPower === 'alternateAnswer1Cylinder') {
-        this.answeValues.targetValueAnswer1Cylinder = result
+        this.answeValues1St3.targetValueAnswer1Cylinder = result
       }
       else if (positionOfPower === 'alternateAnswer1Axis') {
-        this.answeValues.targetValueAnswer1Axis = result
+        this.answeValues1St3.targetValueAnswer1Axis = result
       }
     });
   }
-
-
 }

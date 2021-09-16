@@ -19,13 +19,13 @@ export class Station4Component implements OnInit {
     console.log("station1 finished")
   }
   goToAnswer1Page() {
-    this.route.navigate(['/refraction/stationPage/station1/answer1'])
+    this.route.navigate(['/refraction/stationPage/station4/answer1'])
   }
   goToAnswer2Page() {
-    this.route.navigate(['/refraction/stationPage/station1/answer2'])
+    this.route.navigate(['/refraction/stationPage/station4/answer2'])
   }
   goToAnswer3Page() {
-    this.route.navigate(['/refraction/stationPage/station1/answer3'])
+    this.route.navigate(['/refraction/stationPage/station4/answer3'])
   }
 
 }

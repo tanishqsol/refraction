@@ -26,7 +26,6 @@ mat-toolbar{
 width: 50%;
 height: 10vh;
 border: 1px solid black;
-background-color: rgb(228, 213, 12);
 }
 
 .left-eye{
@@ -34,6 +33,8 @@ background-color: rgb(228, 213, 12);
 width: 50%;
 border: 1px solid black;
 height: 10vh;
+background-color: rgb(228, 213, 12);
+
 }
 .introduction{
     border: 1px solid gray;

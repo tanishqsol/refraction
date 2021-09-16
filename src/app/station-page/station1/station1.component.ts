@@ -11,20 +11,32 @@ import { DataServiceService } from '../../data-service.service';
 })
 export class Station1Component implements OnInit {
   myAnswers: any[];
+  myAnswers1: any;
+  myAnswers2: any;
+  myAnswers3: any;
+  myAnswers1rte: any;
+  myAnswers2rte: any;
+  myAnswers3rte: any;
 
   constructor(private location: Location, private route: Router, private dataService: DataServiceService) { }
   myAnswersToShow;
   ngOnInit(): void {
-    this.dataService.answers.subscribe(data => this.myAnswers= data)
-    this.myAnswersToShow= this.myAnswers.filter(val=>val!==null)
-    console.log(this.myAnswersToShow)
+    this.dataService.answer1St1Lte.subscribe(data => this.myAnswers1 = data.join(' '))
+    this.dataService.answer2St1Lte.subscribe(data => this.myAnswers2 = data.join(' '))
+    this.dataService.answer3St1Lte.subscribe(data => this.myAnswers3 = data.join(' '))
   }
   goBack() {
-
-    this.location.back();
+    alert('Are you sure you want to cancel this station?')
+    this.route.navigate(['/refraction/stationPage'])
   }
   finishStation1() {
     console.log("station1 finished")
+  }
+  goToLeft() {
+    this.route.navigate(['/refraction/stationPage/station1'])
+  }
+  goToRight() {
+    this.route.navigate(['/refraction/stationPage/station1-right'])
   }
   goToAnswer1Page() {
     this.route.navigate(['/refraction/stationPage/station1/answer1'])
